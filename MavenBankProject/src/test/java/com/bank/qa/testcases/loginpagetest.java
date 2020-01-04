@@ -5,44 +5,35 @@ import org.testng.annotations.Test;
 import com.bank.qa.base.baseactions;
 import com.bank.qa.pages.loginpage;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 public class loginpagetest extends baseactions {
-  
+
 	public static loginpage log;
-    
-	@BeforeSuite
-  public void setup() {
-	  launchbrowser();
-	  log=new loginpage();
-	    }
-  
-//	@Test
-//	public void Guru99logotest() {
-//		log.text();
-//	}
-	
-	@Test
+
+	@BeforeTest
+	public void setup() {
+		launchbrowser();
+		log = new loginpage();
+	}
+
+	@Test(priority = 1)
 	public void Guru99logotest() {
-		boolean fl=log.text();
+		boolean fl = log.text();
 		Assert.assertTrue(fl);
 		System.out.println(fl);
 	}
-	
-	@Test
+
+	@Test(priority = 2)
 	public void Logintest() {
 		log.login();
 	}
-	
-	
-	
-  @AfterSuite
-  public void closebrowser() {
-	  
-  }
+
+	@AfterTest
+	public void closebrowser() {
+		driver.quit();
+	}
 
 }

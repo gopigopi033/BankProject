@@ -1,6 +1,7 @@
 package com.bank.qa.base;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -12,9 +13,10 @@ public class baseactions {
 	public static WebDriver driver;
 	public static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
-
+	
 	public void launchbrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium java\\chrome\\chromedriver.exe");
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium java\\chrome2\\chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.get("http://demo.guru99.com/V2/");
 		
@@ -26,18 +28,8 @@ public class baseactions {
 		driver = e_driver;
 		
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-			}
-
-//	public void failed(String testmethodname) {
-//		File scrfile=((TakesScreenshot)c).getScreenshotAs(OutputType.FILE);
-//		try {
-//			FileUtils.copyFile(scrfile, new File("C:\\Users\\Jothi\\git\\BankProject"
-//					+ "\\MavenBankProject\\screenshots"+testmethodname+"-"+".jpg"));
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-			
+		//driver.switchTo().alert().dismiss();
 	}
+}

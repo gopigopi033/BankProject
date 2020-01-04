@@ -24,25 +24,25 @@ public class homepagetest extends baseactions {
 		test = new TestUtil();
 	}
 
-	@Test
+	@Test(priority=1)
 	public void verifynewcustomermenu() {
 		log.login();
 		home.newcustomermenu();
 	}
 
-	@Test
+	@Test(priority=2)
 	public void verifyeditcustomermenu() {
 		log.login();
 		home.editcustomermenu();
 	}
 
-	@Test
+	@Test(priority=3)
 	public void verifydeletecustomermenu() {
 		log.login();
 		home.deletecustomermenu();
 	}
 
-	@Test
+	@Test(priority=4)
 	public void verifynewaccountmenu() {
 		log.login();
 		home.newaccountmenu();

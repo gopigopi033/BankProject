@@ -16,8 +16,10 @@ public class TestUtil extends baseactions {
 	
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String currentDir = System.getProperty("user.dir");
+		String currentDir = System.getProperty("user.dir"); //"user.dir" is automatically get curren project main folder address. 
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+			
+		//FileUtils.copyFile(scrFile, new File("C:\\Users\\Jothi\\git\\BankProject\\MavenBankProject\\test-output\\ExtentReport.html" + System.currentTimeMillis() + ".png"));
 	}
 
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {
