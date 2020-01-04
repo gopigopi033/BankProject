@@ -1,0 +1,17 @@
+
+<!-- <suite name="Suite" verbose="2"> -->
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.bank.qa.testcases.loginpagetest" />
+			<methods>
+			<include name="Guru99logotest"></include>
+			<exclude name="Logintest"></exclude>
+			</methods>
+			<class name="com.bank.qa.testcases.homepagetest" />
+			<methods>
+			<include name="verifynewaccountmenu"></include>
+			</methods>
+		</classes>
+	</test>
+</suite>
